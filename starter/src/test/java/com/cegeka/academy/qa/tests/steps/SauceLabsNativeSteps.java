@@ -8,7 +8,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -64,18 +63,34 @@ public class SauceLabsNativeSteps {
 
     @Then("Login native screen is displayed")
     public void loginNativeScreenIsDisplayed() {
-        boolean isLoginScreenDisplayed = driver.findElement(By.xpath("//*[@content-desc='login screen']")).isDisplayed();
+        boolean isLoginScreenDisplayed = getFluentWait().until(ExpectedConditions.visibilityOfElementLocated(By.ByXPath.xpath("//*[@content-desc='login screen']"))).isDisplayed();
+//        boolean isLoginScreenDisplayed = driver.findElement(By.xpath("//*[@content-desc='login screen']")).isDisplayed();
         Assert.assertTrue("Login screen is not displayed", isLoginScreenDisplayed);
     }
 
-    @When("I see webview page")
-    public void iSeeWeviewPage() {
-
+    @When("Context is changed to webview")
+    public void iChangeContextToWebview() {
+        System.out.println("All possible available contexts :" + driver.getContextHandles());
+        System.out.println("Current context is:" + driver.getContext());
+        System.out.println("Trying to change context to webview");
         driver.getContextHandles()
                 .stream()
                 .filter(context -> context.equals("WEBVIEW_com.saucelabs.mydemoapp.rn"))
                 .findFirst()
-                .ifPresent(webViewContext ->driver.context(webViewContext));
-
+                .ifPresent(webViewContext -> driver.context(webViewContext));
+        System.out.println("Current context is:" + driver.getContext());
     }
+
+    @When("User logs in with username {string} and password {string} on the native login screen")
+    public void userLogsInWithUsernameAndPasswordOnTheNativeLoginScreen(String arg0, String arg1) {
+        //TODO homework. Delete exception after implementing step.
+        throw new RuntimeException("Implement this step. This is the homework");
+    }
+
+    @Then("User will not see login screen")
+    public void userWillNotSeeLoginScreen() {
+        //TODO homework. Delete exception after implementing step.
+        throw new RuntimeException("Implement this step. This is the homework");
+    }
+
 }
