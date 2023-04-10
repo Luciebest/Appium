@@ -51,6 +51,26 @@ Rename it locally to SauceLabDemo.apk and put it in path that needs to be update
 ```bash
 desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Maria\\apks\\SauceLabDemo.apk");
 ```
+#### set the chrome driver executable in FrameworkConfiguration
+
+```bash
+desiredCapabilities.setCapability(UiAutomator2Options.CHROMEDRIVER_EXECUTABLE_OPTION, "C:\\Users\\Maria\\chromedrivers\\chromedriver103.exe");
+```
+#### start adb 
+```bash
+  adb devices -l
+```
+![img_6.png](img_6.png)
+
+#### start android simulator 
+
+
+#### check device/virtual device is present and it does not show unauthorized
+
+![img_7.png](img_7.png)
+
+
+
 
 ## 0. Setup
 ### 0.1. Clone project 
