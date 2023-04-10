@@ -1,3 +1,4 @@
+
 package com.cegeka.academy.qa.configurations;
 
 
@@ -59,7 +60,9 @@ public class FrameworkConfiguration {
         desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "AndroidDevice");
         desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 2000);
         desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, true);
+        //Update to you apk path
         desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Maria\\apks\\SauceLabDemo.apk");
+        //Update to your chromedriver path. This must match the browser version(android webview version) on mobile device. It will fail to change context if not properly set
         desiredCapabilities.setCapability(UiAutomator2Options.CHROMEDRIVER_EXECUTABLE_OPTION, "C:\\Users\\Maria\\chromedrivers\\chromedriver103.exe");
 //
         return desiredCapabilities;

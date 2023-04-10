@@ -40,10 +40,17 @@ https://nodejs.org/en/download
 ``` 
 ##### start appium 
 
-```gherkin
+```bash
   appium --address 127.0.0.1 --port 4445
 ```
+#### get demo app
 
+https://github.com/saucelabs/my-demo-app-rn/releases
+https://github.com/saucelabs/my-demo-app-rn/releases/download/v1.3.0/Android-MyDemoAppRN.1.3.0.build-244.apk
+Rename it locally to SauceLabDemo.apk and put it in path that needs to be updated in FrameworkConfiguration
+```bash
+desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Maria\\apks\\SauceLabDemo.apk");
+```
 
 ## 0. Setup
 ### 0.1. Clone project 
