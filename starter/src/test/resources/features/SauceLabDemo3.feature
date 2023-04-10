@@ -24,12 +24,14 @@ Feature: SauceLab Demo Native
     When User opens native menu
     Then User verifies native menu is opened
 
+#    When User selects Webview from native menu
 #    Then Webview selection is displayed
-#    When User enters "https://www.saucedemo.com" in webview selection and clicks enter
 
-    When Context is changed to webview
+  #    When User enters "https://www.saucedemo.com" in webview selection and clicks enter
 
-#    When User logs in with username "<username>" and password "<password>" on the webview login screen
+    And Context is changed to webview
+
+#    And User logs in with username "<username>" and password "<password>" on the webview login screen
 
 
 
