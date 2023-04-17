@@ -5,6 +5,8 @@ package com.cegeka.academy.qa.configurations;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.cucumber.java.AfterAll;
+import org.junit.After;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -23,7 +25,8 @@ public class FrameworkConfiguration {
 
     @Bean
     public AndroidDriver getAndroidDriver() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lucia\\developer\\chromedrivers\\chromedriver111\\chromedriver111.exe");
+        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lucia\\developer\\chromedrivers\\chromedriver101\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "E:\\chromedrivers\\chromedriver101\\chromedriver.exe");
         try {
             //for appium 1.x (appium server gui) the path is http://127.0.0.1:4445/wd/hub
             //for appium 2.0 beta (installed from node) the path is like this, without /wd/hub
@@ -61,9 +64,9 @@ public class FrameworkConfiguration {
         desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 2000);
         desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, true);
         //Update to you apk path
-        desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Maria\\apks\\SauceLabDemo.apk");
+        desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Lucia\\apk\\SauceLabDemo.apk");
         //Update to your chromedriver path. This must match the browser version(android webview version) on mobile device. It will fail to change context if not properly set
-        desiredCapabilities.setCapability(UiAutomator2Options.CHROMEDRIVER_EXECUTABLE_OPTION, "C:\\Users\\Lucia\\chromedrivers\\chromedriver111\\chromedriver111.exe");
+        desiredCapabilities.setCapability(UiAutomator2Options.CHROMEDRIVER_EXECUTABLE_OPTION, "E:\\chromedrivers\\chromedriver101\\chromedriver.exe");
 //
         return desiredCapabilities;
 //        UiAutomator2Options uiAutomator2Options = new UiAutomator2Options()
